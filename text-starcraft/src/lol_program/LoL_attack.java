@@ -17,11 +17,12 @@ public class LoL_attack {
 
     // attack method
     void attack(int[] me_info_int, int[] enemy) {
-        // 적의 체력이 0보다 작아질 때까지 공격 반복
+        // Repeat attack until the enemy's HP become less than 0
         while(enemy_info[2] > 0){
             System.out.println("--------------------------------");
             System.out.printf("[안내] [%s]유닛이 [공격] 하였습니다.\n", user_name);
-            enemy[2] -= me_info[0] / enemy_info[1];         // 적의 남은 체력 -= 내 공격력 / 적 방어력
+            // enemy hp -= my ATK / enemy's DEF
+            enemy[2] -= me_info[0] / enemy_info[1];
             System.out.printf("[안내] 상대 유닛의 남은 [체력]은 %d 입니다.\n", enemy[2]);
             System.out.println("--------------------------------");
         }
